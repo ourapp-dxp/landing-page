@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ourapp.studio/docs/roadmap</id>
+    <title>Documentation Blog</title>
+    <updated>2024-08-09T00:10:04.047Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://ourapp.studio/docs/roadmap"/>
+    <subtitle>Documentation Blog</subtitle>
+    <icon>https://ourapp.studio/docs/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome]]></title>
+        <id>https://ourapp.studio/docs/roadmap/welcome</id>
+        <link href="https://ourapp.studio/docs/roadmap/welcome"/>
+        <updated>2024-08-09T00:10:04.047Z</updated>
+        <summary type="html"><![CDATA[Coming soon]]></summary>
+        <content type="html"><![CDATA[<p>Coming soon</p>]]></content>
+        <category label="roadmap" term="roadmap"/>
+    </entry>
+</feed>
