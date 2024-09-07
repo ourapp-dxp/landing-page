@@ -4,15 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <span class="hidden">{% load static %}</span>
-  <link rel="icon" href="{% static 'favicon.ico' %}" />
   <title>ourapp.studio / Build better experiences</title>
-  <link rel="manifest" href="{% static 'manifest.json' %}" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static '/apple-touch-icon.png' %}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon-32x32.png' %}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon-16x16.png' %}">
-  <link rel="manifest" href="{% static '/site.webmanifest' %}">
+  <link rel="icon" href="favicon.ico" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 
   <!-- Calendly -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -23,17 +21,5 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('schedule-link').addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent the default anchor behavior
-        Calendly.initPopupWidget({
-          url: 'https://calendly.com/ourapp-support/30min?primary_color=4f46e5'
-        });
-        return false;
-      });
-    });
-  </script>
-  
 </body>
 </html>
