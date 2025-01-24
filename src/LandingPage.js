@@ -64,7 +64,7 @@ export default function LandingPage() {
 
   useEffect(() => {
     const root = document.documentElement;
-    const initialTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const initialTheme = localStorage.getItem('shared-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     if (initialTheme === 'dark') {
       root.classList.add('dark');
     } else {

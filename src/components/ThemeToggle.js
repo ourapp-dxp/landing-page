@@ -23,7 +23,7 @@ function MoonIcon(props) {
 export function ThemeToggle() {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
-      const storedTheme = localStorage.getItem('theme');
+      const storedTheme = localStorage.getItem('shared-theme');
       if (storedTheme) {
         return storedTheme;
       }
@@ -34,12 +34,19 @@ export function ThemeToggle() {
 
   useEffect(() => {
     const root = document.documentElement;
+    const themeColorLight = document.getElementById('theme-color-light');
+    const themeColorDark = document.getElementById('theme-color-dark');
+
     if (theme === 'dark') {
       root.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+      localStorage.setItem('shared-theme', 'dark');
+      if (themeColorLight) themeColorLight.setAttribute('content', '#000000');
+      if (themeColorDark) themeColorDark.setAttribute('content', '#000000');
     } else {
       root.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+      localStorage.setItem('shared-theme', 'light');
+      if (themeColorLight) themeColorLight.setAttribute('content', '#ffffff');
+      if (themeColorDark) themeColorDark.setAttribute('content', '#ffffff');
     }
   }, [theme]);
 
