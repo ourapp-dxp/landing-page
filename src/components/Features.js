@@ -55,13 +55,13 @@ export default function Features() {
             <div className="relative isolate">
                 
                 {/* 
-                    <svg class="-mt-24 absolute inset-0 -z-10 h-full w-full [mask-image:radial-gradient(100%_100%_at_top_right,gray,transparent)]" aria-hidden="true">
+                    <svg className="-mt-24 absolute inset-0 -z-10 h-full w-full [mask-image:radial-gradient(100%_100%_at_top_right,gray,transparent)]" aria-hidden="true">
                         <defs>
                             <pattern id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
                                 <path d="M100 200V.5M.5 .5H200" fill="none" stroke="none"></path> 
                             </pattern>
                         </defs>
-                        <svg x="50%" y="-1" class="overflow-visible fill-indigo-900"> 
+                        <svg x="50%" y="-1" className="overflow-visible fill-indigo-900"> 
                             <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0"></path>
                         </svg>
                         <rect width="100%" height="100%" stroke-width="0" fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"></rect> 
@@ -71,13 +71,13 @@ export default function Features() {
 
                 <Container className="relative">
                     <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-                        <h2 class="text-base font-semibold leading-7 text-white">
+                        <h2 className="text-base font-semibold leading-7 text-white">
                             Deploy faster
                         </h2>
-                        <p class="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                        <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
                             Everything you need to deploy
                         </p>
-                        <p class="mt-6 text-base leading-7 text-white">
+                        <p className="mt-6 text-base leading-7 text-white">
                             Our apps are accessible via a dynamic URL (and QR code) once published. <br />They work flawlessly across modern browsers and social media in-app browsers.
                         </p>
                     </div>

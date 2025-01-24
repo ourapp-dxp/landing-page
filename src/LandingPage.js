@@ -9,6 +9,7 @@ import AnimatedPhone from './components/AnimatedPhone';
 import CallToAction from './components/CallToAction';
 import Features from './components/Features';
 import Pricing from './components/Pricing';
+import { ThemeToggle } from './components/ThemeToggle'; // Ensure correct import
 
 const navigation = [
   { name: 'Features', href: '#features', target: '' },
@@ -61,28 +62,15 @@ function classNames(...classes) {
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const [darkMode, setDarkMode] = useState(() => {
-    // Check localStorage for saved theme preference
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-    return false;
-  });
-
   useEffect(() => {
-    // Apply dark mode class to <html>
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+    const root = document.documentElement;
+    const initialTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (initialTheme === 'dark') {
+      root.classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+      root.classList.remove('dark');
     }
-  }, [darkMode]);
-
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
-  };
+  }, []);
 
   return (
     <div>
@@ -117,8 +105,9 @@ export default function LandingPage() {
               ))}
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-x-2">
-              <a class="rounded-md bg-white dark:bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-300/30" href="https://ourapp.io/signin">Sign in</a>
-              <a class="rounded-md bg-indigo-600 dark:bg-indigo-700 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" href="https://ourapp.io/register">Get started<span aria-hidden="true"> →</span></a>
+              <ThemeToggle />
+              <a className="rounded-md bg-white dark:bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-300/30" href="https://ourapp.io/signin">Sign in</a>
+              <a className="rounded-md bg-indigo-600 dark:bg-indigo-700 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" href="https://ourapp.io/register">Get started<span aria-hidden="true"> →</span></a>
             </div>
           </nav>
           <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -174,6 +163,7 @@ export default function LandingPage() {
                     </a>
                   </div>
                   <div className="py-6">
+                    <ThemeToggle />
                   </div>
                 </div>
               </div>
@@ -210,12 +200,12 @@ export default function LandingPage() {
 
           <div className="mx-auto max-w-7xl px-6 pt-24 sm:pt-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:pt-40">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-              <div class="flex">
-                <div class="relative flex items-center gap-x-4 rounded-full px-4 py-1 text-sm leading-6 text-gray-600 dark:text-white ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-white/10 dark:hover:ring-white/20">
-                  <span class="font-semibold text-indigo-600 dark:text-indigo-400">We’re hiring</span>
-                  <span class="h-4 w-px bg-gray-900/10 dark:bg-white/10" aria-hidden="true"></span>
-                  <a class="flex items-center gap-x-1" href="https://www.linkedin.com/in/mitchandersondev/">
-                    <span class="absolute inset-0" aria-hidden="true"></span>Get in touch</a></div></div>
+              <div className="flex">
+                <div className="relative flex items-center gap-x-4 rounded-full px-4 py-1 text-sm leading-6 text-gray-600 dark:text-white ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-white/10 dark:hover:ring-white/20">
+                  <span className="font-semibold text-indigo-600 dark:text-indigo-400">We’re hiring</span>
+                  <span className="h-4 w-px bg-gray-900/10 dark:bg-white/10" aria-hidden="true"></span>
+                  <a className="flex items-center gap-x-1" href="https://www.linkedin.com/in/mitchandersondev/">
+                    <span className="absolute inset-0" aria-hidden="true"></span>Get in touch</a></div></div>
 
               <h1 className="mt-10 max-w-lg text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
                 Lightning fast app generation
@@ -223,11 +213,11 @@ export default function LandingPage() {
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-white">
                 Create effortless mobile first experiences for your customers (or staff). Ourapp comes packed with customisable features such as Forms, Pages and Products.
               </p>
-              <div class="mt-10 flex items-center gap-x-6">
-                <a class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" href="https://ourapp.io/signin">
+              <div className="mt-10 flex items-center gap-x-6">
+                <a className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" href="https://ourapp.io/signin">
                   Watch video
                 </a>
-                <a class="text-sm font-semibold leading-6 text-gray-900 dark:text-white" href="https://ourapp.io/register">Get started<span aria-hidden="true"> →</span></a></div>
+                <a className="text-sm font-semibold leading-6 text-gray-900 dark:text-white" href="https://ourapp.io/register">Get started<span aria-hidden="true"> →</span></a></div>
             </div>
             <AnimatedPhone />
           </div>
@@ -246,7 +236,7 @@ export default function LandingPage() {
               <br /><br />
               ourapp.studio supports Progressive Web App (PWA) features such as "Add to Home Screen," full-screen browsing, and custom app icons, allowing users to interact with your brand like a native mobile app.
             </p>
-            <div class="mt-10 flex items-center gap-x-6"><a class="rounded-md bg-indigo-600 dark:bg-indigo-700 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" href="https://ourapp.io/signin">Example app<span aria-hidden="true"> →</span></a><a class="text-sm font-semibold leading-6 text-gray-900 dark:text-white" href="https://docs.ourapp.studio" target="_blank">See tutorials</a></div>
+            <div className="mt-10 flex items-center gap-x-6"><a className="rounded-md bg-indigo-600 dark:bg-indigo-700 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" href="https://ourapp.io/signin">Example app<span aria-hidden="true"> →</span></a><a className="text-sm font-semibold leading-6 text-gray-900 dark:text-white" href="https://docs.ourapp.studio" target="_blank">See tutorials</a></div>
           </div>
           <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
             <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
@@ -273,7 +263,7 @@ export default function LandingPage() {
 
       
       <div id="FAQ" className="mx-auto px-6 pt-24 pb-24 lg:px-8 bg-gray-50 dark:bg-gray-900">
-        <div class="mx-auto max-w-2xl text-center"><h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Frequently asked questions</h2></div>
+        <div className="mx-auto max-w-2xl text-center"><h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Frequently asked questions</h2></div>
         <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
           <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
             {faqs.map((faq) => (
@@ -383,4 +373,4 @@ export default function LandingPage() {
       </footer>
     </div>
   );
-};
+}
