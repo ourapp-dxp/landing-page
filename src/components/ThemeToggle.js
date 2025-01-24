@@ -34,12 +34,19 @@ export function ThemeToggle() {
 
   useEffect(() => {
     const root = document.documentElement;
+    const themeColorLight = document.getElementById('theme-color-light');
+    const themeColorDark = document.getElementById('theme-color-dark');
+
     if (theme === 'dark') {
       root.classList.add('dark');
       localStorage.setItem('theme', 'dark');
+      if (themeColorLight) themeColorLight.setAttribute('content', '#000000');
+      if (themeColorDark) themeColorDark.setAttribute('content', '#000000');
     } else {
       root.classList.remove('dark');
       localStorage.setItem('theme', 'light');
+      if (themeColorLight) themeColorLight.setAttribute('content', '#ffffff');
+      if (themeColorDark) themeColorDark.setAttribute('content', '#ffffff');
     }
   }, [theme]);
 
