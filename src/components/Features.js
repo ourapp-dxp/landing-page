@@ -9,7 +9,7 @@ const features = [
         title: 'Studio editor',
         description:
             "Build pages and forms, publish apps instantly. Compose and style your app via our no code, drop and drag builder.",
-        image: '/screenshots/editor.png',
+        image: 'editor.png',
     }
 ]
 
@@ -50,7 +50,7 @@ export default function Features() {
         <section
             id="features"
             aria-label="Features for running your books"
-            className="relative overflow-hidden bg-indigo-600 py-20"
+            className="relative overflow-hidden bg-indigo-600 dark:bg-indigo-800 py-20"
         >
             <div className="relative isolate">
                 
