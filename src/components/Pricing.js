@@ -34,7 +34,7 @@ export default function Pricing() {
     const [frequency, setFrequency] = useState(frequencies[0]);
 
     return (
-        <div id="pricing" className="isolate overflow-hidden bg-indigo-600 dark:bg-indigo-800">
+        <div id="pricing" className="isolate overflow-hidden bg-indigo-600 dark:bg-indigo-700">
             <div className="mx-auto max-w-7xl px-6 pb-96 text-center sm:pt-16 lg:px-8">
                 <div className="mx-auto max-w-4xl">
                     <h2 className="text-base font-semibold leading-7 text-white">Pricing</h2>

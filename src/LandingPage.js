@@ -74,7 +74,7 @@ export default function LandingPage() {
 
   return (
     <div>
-      <div className="bg-white dark:bg-gray-900">
+      <div className="bg-white dark:bg-zinc-900">
         <header className="relative mx-auto max-w-screen-xl z-50 bg-transparent">
           <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div className="flex lg:flex-1">
@@ -106,13 +106,13 @@ export default function LandingPage() {
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-x-2">
               <ThemeToggle />
-              <a className="rounded-md bg-white dark:bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-300/30" href="https://ourapp.io/signin">Sign in</a>
+              <a className="rounded-md bg-white dark:bg-zinc-900 hover:dark:bg-zinc-800 px-3.5 py-2.5 text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-300/30" href="https://ourapp.io/signin">Sign in</a>
               <a className="rounded-md bg-indigo-600 dark:bg-indigo-700 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" href="https://ourapp.io/register">Get started<span aria-hidden="true"> →</span></a>
             </div>
           </nav>
           <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
             <div className="fixed inset-0 z-50" />
-            <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-zinc-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
                 <a href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">ourapp menu</span>
@@ -149,7 +149,7 @@ export default function LandingPage() {
                   <div className="space-y-4 py-6">
                     <a
                       href="https://ourapp.io/signin"
-                      className="block rounded-md bg-white dark:bg-gray-900 px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-300/30"
+                      className="block rounded-md bg-white dark:bg-zinc-900 hover:dark:bg-zinc-800 px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-300/30"
                       onClick={() => setMobileMenuOpen(false)} // Close menu on click
                     >
                       Sign in
@@ -172,7 +172,7 @@ export default function LandingPage() {
         </header>
 
         {/* Hero section */}
-        <div className="relative isolate -mt-24 bg-white dark:bg-gray-900">
+        <div className="relative isolate -mt-24 bg-white dark:bg-zinc-900">
           <svg
             className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 dark:stroke-gray-800 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:[mask-image:radial-gradient(100%_100%_at_top_right,black,transparent)]"
             aria-hidden="true"
@@ -225,7 +225,7 @@ export default function LandingPage() {
       </div>
 
       {/* Build and publish */}
-      <div id="features" className="relative isolate overflow-hidden bg-white dark:bg-gray-900">
+      <div id="features" className="relative isolate overflow-hidden bg-white dark:bg-zinc-900">
         <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-20">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8 lg:block">
             <h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
@@ -262,7 +262,7 @@ export default function LandingPage() {
       <CallToAction />
 
       
-      <div id="FAQ" className="mx-auto px-6 pt-24 pb-24 lg:px-8 bg-gray-50 dark:bg-gray-900">
+      <div id="FAQ" className="mx-auto px-6 pt-24 pb-24 lg:px-8 bg-gray-50 dark:bg-zinc-800">
         <div className="mx-auto max-w-2xl text-center"><h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Frequently asked questions</h2></div>
         <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
           <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
@@ -293,7 +293,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <div id="company" className="relative isolate bg-white dark:bg-gray-900">
+      <div id="company" className="relative isolate bg-white dark:bg-zinc-900">
         <div className="mx-auto max-w-7xl px-6 py-8 sm:py-8 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-8">
           <div className="hidden lg:block mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
             <iframe src="https://my.spline.design/iphone14procopy-f1a162c79f35a2392bdeaea13bf01849/" frameBorder="0" width="100%" height="100%" style={{ height: 50 + 'em' }}></iframe>
