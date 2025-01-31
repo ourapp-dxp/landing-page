@@ -266,8 +266,8 @@ export default function LandingPage() {
       
       <div id="FAQ" className="mx-auto px-6 pt-24 pb-24 lg:px-8 bg-gray-50 dark:bg-zinc-800">
         <div className="mx-auto max-w-2xl text-center"><h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Frequently asked questions</h2></div>
-        <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-          <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
+        <div className="mx-auto max-w-4xl divide-y divide-gray-900/10 dark:divide-white/10">
+          <dl className="mt-10 space-y-6 divide-y divide-gray-900/10 dark:divide-white/10">
             {faqs.map((faq) => (
               <Disclosure as="div" key={faq.question} className="pt-6">
                 {({ open }) => (

@@ -35,7 +35,7 @@ export default function Pricing() {
 
     return (
         <div id="pricing" className="isolate overflow-hidden bg-indigo-600 dark:bg-indigo-700">
-            <div className="mx-auto max-w-7xl px-6 pb-96 text-center sm:pt-16 lg:px-8">
+            <div className="mx-auto max-w-7xl p-6 pb-96 text-center sm:pt-16 lg:px-8">
                 <div className="mx-auto max-w-4xl">
                     <h2 className="text-base font-semibold leading-7 text-white">Pricing</h2>
                     <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
