@@ -9,7 +9,7 @@ const features = [
         title: 'Studio editor',
         description:
             "Build pages and forms, publish apps instantly. Compose and style your app via our no code, drop and drag builder.",
-        image: 'editor.png',
+        image: 'editor-v2.png',
     }
 ]
 
