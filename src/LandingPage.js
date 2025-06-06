@@ -5,6 +5,7 @@ import { Bars3BottomRightIcon, XMarkIcon, CodeBracketIcon, BellAlertIcon, Device
 import { Disclosure } from '@headlessui/react'
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
 
+import Banner from './components/Banner';
 import AnimatedPhone from './components/AnimatedPhone';
 import CallToAction from './components/CallToAction';
 import Features from './components/Features';
@@ -74,11 +75,12 @@ export default function LandingPage() {
 
   return (
     <div>
-      <div className="bg-white dark:bg-gray-900">
+      <div className="bg-white dark:bg-zinc-900">
+      <Banner />
         <header className="relative mx-auto max-w-screen-xl z-50 bg-transparent">
           <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div className="flex lg:flex-1">
-              <a href="#" className="-m-1.5 p-1.5">
+              <a href="#" className="-m-1.0 p-1.5">
                 <span className="sr-only">ourapp</span>
                 <svg width="137" height="38" viewBox="0 0 137 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path className="fill-zinc-900 dark:fill-white" d="M3.96 20.324C3.96 20.7787 4.004 21.226 4.092 21.666C4.18 22.0913 4.32667 22.48 4.532 22.832C4.752 23.1693 5.038 23.4407 5.39 23.646C5.742 23.8513 6.182 23.954 6.71 23.954C7.238 23.954 7.678 23.8513 8.03 23.646C8.39667 23.4407 8.68267 23.1693 8.888 22.832C9.108 22.48 9.262 22.0913 9.35 21.666C9.438 21.226 9.482 20.7787 9.482 20.324C9.482 19.8693 9.438 19.422 9.35 18.982C9.262 18.542 9.108 18.1533 8.888 17.816C8.68267 17.4787 8.39667 17.2073 8.03 17.002C7.678 16.782 7.238 16.672 6.71 16.672C6.182 16.672 5.742 16.782 5.39 17.002C5.038 17.2073 4.752 17.4787 4.532 17.816C4.32667 18.1533 4.18 18.542 4.092 18.982C4.004 19.422 3.96 19.8693 3.96 20.324ZM0.836 20.324C0.836 19.4147 0.975333 18.5933 1.254 17.86C1.53267 17.112 1.92867 16.4813 2.442 15.968C2.95533 15.44 3.57133 15.0367 4.29 14.758C5.00867 14.4647 5.81533 14.318 6.71 14.318C7.60467 14.318 8.41133 14.4647 9.13 14.758C9.86333 15.0367 10.4867 15.44 11 15.968C11.5133 16.4813 11.9093 17.112 12.188 17.86C12.4667 18.5933 12.606 19.4147 12.606 20.324C12.606 21.2333 12.4667 22.0547 12.188 22.788C11.9093 23.5213 11.5133 24.152 11 24.68C10.4867 25.1933 9.86333 25.5893 9.13 25.868C8.41133 26.1467 7.60467 26.286 6.71 26.286C5.81533 26.286 5.00867 26.1467 4.29 25.868C3.57133 25.5893 2.95533 25.1933 2.442 24.68C1.92867 24.152 1.53267 23.5213 1.254 22.788C0.975333 22.0547 0.836 21.2333 0.836 20.324ZM24.8672 26H21.8972V24.416H21.8312C21.4352 25.076 20.9219 25.5527 20.2912 25.846C19.6606 26.1393 19.0152 26.286 18.3552 26.286C17.5192 26.286 16.8299 26.176 16.2872 25.956C15.7592 25.736 15.3412 25.428 15.0332 25.032C14.7252 24.6213 14.5052 24.13 14.3732 23.558C14.2559 22.9713 14.1972 22.326 14.1972 21.622V14.626H17.3212V21.05C17.3212 21.9887 17.4679 22.6927 17.7612 23.162C18.0546 23.6167 18.5752 23.844 19.3232 23.844C20.1739 23.844 20.7899 23.5947 21.1712 23.096C21.5526 22.5827 21.7432 21.7467 21.7432 20.588V14.626H24.8672V26ZM26.7982 14.626H29.7682V16.738H29.8122C29.9589 16.386 30.1569 16.0633 30.4062 15.77C30.6556 15.462 30.9416 15.2053 31.2642 15C31.5869 14.78 31.9316 14.6113 32.2982 14.494C32.6649 14.3767 33.0462 14.318 33.4422 14.318C33.6476 14.318 33.8749 14.3547 34.1242 14.428V17.332C33.9776 17.3027 33.8016 17.2807 33.5962 17.266C33.3909 17.2367 33.1929 17.222 33.0022 17.222C32.4302 17.222 31.9462 17.3173 31.5502 17.508C31.1542 17.6987 30.8316 17.9627 30.5822 18.3C30.3476 18.6227 30.1789 19.004 30.0762 19.444C29.9736 19.884 29.9222 20.3607 29.9222 20.874V26H26.7982V14.626Z" fill="#323244"/>
@@ -106,13 +108,13 @@ export default function LandingPage() {
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-x-2">
               <ThemeToggle />
-              <a className="rounded-md bg-white dark:bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-300/30" href="https://ourapp.io/signin">Sign in</a>
+              <a className="rounded-md bg-white dark:bg-zinc-900 hover:dark:bg-zinc-800 px-3.5 py-2.5 text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-300/30" href="https://ourapp.io/signin">Sign in</a>
               <a className="rounded-md bg-indigo-600 dark:bg-indigo-700 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" href="https://ourapp.io/register">Get started<span aria-hidden="true"> →</span></a>
             </div>
           </nav>
           <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
             <div className="fixed inset-0 z-50" />
-            <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-zinc-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
                 <a href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">ourapp menu</span>
@@ -149,7 +151,7 @@ export default function LandingPage() {
                   <div className="space-y-4 py-6">
                     <a
                       href="https://ourapp.io/signin"
-                      className="block rounded-md bg-white dark:bg-gray-900 px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-300/30"
+                      className="block rounded-md bg-white dark:bg-zinc-900 hover:dark:bg-zinc-800 px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-300/30"
                       onClick={() => setMobileMenuOpen(false)} // Close menu on click
                     >
                       Sign in
@@ -172,7 +174,7 @@ export default function LandingPage() {
         </header>
 
         {/* Hero section */}
-        <div className="relative isolate -mt-24 bg-white dark:bg-gray-900">
+        <div className="relative isolate -mt-24 bg-white dark:bg-zinc-900">
           <svg
             className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 dark:stroke-gray-800 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:[mask-image:radial-gradient(100%_100%_at_top_right,black,transparent)]"
             aria-hidden="true"
@@ -225,7 +227,7 @@ export default function LandingPage() {
       </div>
 
       {/* Build and publish */}
-      <div id="features" className="relative isolate overflow-hidden bg-white dark:bg-gray-900">
+      <div id="features" className="relative isolate overflow-hidden bg-white dark:bg-zinc-900">
         <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-20">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8 lg:block">
             <h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
@@ -262,10 +264,10 @@ export default function LandingPage() {
       <CallToAction />
 
       
-      <div id="FAQ" className="mx-auto px-6 pt-24 pb-24 lg:px-8 bg-gray-50 dark:bg-gray-900">
+      <div id="FAQ" className="mx-auto px-6 pt-24 pb-24 lg:px-8 bg-gray-50 dark:bg-zinc-800">
         <div className="mx-auto max-w-2xl text-center"><h2 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Frequently asked questions</h2></div>
-        <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-          <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
+        <div className="mx-auto max-w-4xl divide-y divide-gray-900/10 dark:divide-white/10">
+          <dl className="mt-10 space-y-6 divide-y divide-gray-900/10 dark:divide-white/10">
             {faqs.map((faq) => (
               <Disclosure as="div" key={faq.question} className="pt-6">
                 {({ open }) => (
@@ -293,7 +295,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <div id="company" className="relative isolate bg-white dark:bg-gray-900">
+      <div id="company" className="relative isolate bg-white dark:bg-zinc-900">
         <div className="mx-auto max-w-7xl px-6 py-8 sm:py-8 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-8">
           <div className="hidden lg:block mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
             <iframe src="https://my.spline.design/iphone14procopy-f1a162c79f35a2392bdeaea13bf01849/" frameBorder="0" width="100%" height="100%" style={{ height: 50 + 'em' }}></iframe>
@@ -367,7 +369,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-            <p className="text-sm leading-5 text-white">&copy; 2024 OURAPP SOFTWARE PTY LTD </p>
+            <p className="text-sm leading-5 text-white">&copy; 2024 ourapp.studio<br/>OURAPP SOFTWARE PTY LTD </p>
           </div>
         </div>
       </footer>

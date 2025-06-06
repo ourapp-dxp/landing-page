@@ -104,10 +104,6 @@
     grid-column: span 2/span 2;
 }
 
-.phone .grid p.cardHeader-black {
-    color: black !important;
-}
-
 .grid>section:first-of-type>p.cardHeader {
     color: white;
 }

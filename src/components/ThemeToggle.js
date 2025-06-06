@@ -23,7 +23,7 @@ function MoonIcon(props) {
 export function ThemeToggle() {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
-      const storedTheme = localStorage.getItem('shared-theme');
+      const storedTheme = localStorage.getItem('theme');
       if (storedTheme) {
         return storedTheme;
       }
@@ -39,12 +39,12 @@ export function ThemeToggle() {
 
     if (theme === 'dark') {
       root.classList.add('dark');
-      localStorage.setItem('shared-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
       if (themeColorLight) themeColorLight.setAttribute('content', '#000000');
       if (themeColorDark) themeColorDark.setAttribute('content', '#000000');
     } else {
       root.classList.remove('dark');
-      localStorage.setItem('shared-theme', 'light');
+      localStorage.setItem('theme', 'light');
       if (themeColorLight) themeColorLight.setAttribute('content', '#ffffff');
       if (themeColorDark) themeColorDark.setAttribute('content', '#ffffff');
     }
@@ -57,7 +57,7 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      className="rounded-md bg-white dark:bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-gray-300/30"
+      className="rounded-md bg-white dark:bg-zinc-900 hover:dark:bg-zinc-800 px-3.5 py-2.5 text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:ring-zinc-300/30"
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
       onClick={toggleTheme}
     >
